@@ -7,7 +7,7 @@ import logo from "../../../assets/logo.png"
 export default function Dashboard() 
 {
   const navigate = useNavigate();
-  const token = localStorage.getItem("token");
+  const token = localStorage.getItem("admin");
 
   
   useEffect(() => {
