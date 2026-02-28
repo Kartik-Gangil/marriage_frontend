@@ -3,35 +3,41 @@ import Header from "../../userinterface/homepage/Header";
 import { useNavigate } from 'react-router-dom'
 import { postData } from "../../../services/FetchNodeAdminServices";
 import Swal from "sweetalert2";
+import { useEffect } from "react";
 
-export default function Login() 
-{
+export default function Login() {
   const navigate = useNavigate()
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
- 
+  useEffect(() => {
+    if (localStorage.getItem('admin')) {
+      navigate('/dashboard')
+    }
+  }, [])
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const data = {email, password};
+      const data = { email, password };
 
-      const result = await postData('', data)
+      const result = await postData('api/login', data)
       // console.log(result)
 
-      if (result.id !== '') {
+      if (result.data?._id !== '') {
+        localStorage.setItem('admin', JSON.stringify(result.data?._id))
         navigate('/dashboard')
       }
       else {
-           Swal.fire({
-             position: "top-end",
-             icon: "error",
-             title: "Credentials Incorrect",
-             showConfirmButton: false,
-             timer: 2000
-           });
-         }
+        Swal.fire({
+          position: "top-end",
+          icon: "error",
+          title: "Credentials Incorrect",
+          showConfirmButton: false,
+          timer: 2000
+        });
+      }
 
     } catch (error) {
       console.log(error)
@@ -42,7 +48,7 @@ export default function Login()
   return (
     <div>
       <div>
-        <Header show="nav"/>
+        <Header show="nav" />
       </div>
 
 
@@ -53,12 +59,12 @@ export default function Login()
           <form onSubmit={handleSubmit}>
             <div className="mb-3">
               <label className="form-label">Email address</label>
-              <input type="email" className="form-control" placeholder="Enter email" value={email} onChange={(e) => setEmail(e.target.value)} required/>
+              <input type="email" className="form-control" placeholder="Enter email" value={email} onChange={(e) => setEmail(e.target.value)} required />
             </div>
 
             <div className="mb-3">
               <label className="form-label">Password</label>
-              <input type="password" className="form-control" placeholder="Enter password" value={password} onChange={(e) => setPassword(e.target.value)} required/>
+              <input type="password" className="form-control" placeholder="Enter password" value={password} onChange={(e) => setPassword(e.target.value)} required />
             </div>
 
             <button type="submit" className="btn btn-primary w-100">

@@ -6,22 +6,23 @@ export default function ShowJobDetails()
 {
     const [job,setJob]=useState([]);
 
-     const data=[{name:'perter',village:'mathura',age:21,eduation:'b.tech',work:'coder',mobile:'7892514360',address:'morar gwailor'},
-                 {name:'perter',village:'mathura',age:21,eduation:'b.tech',work:'coder',mobile:'7892514360',address:'morar gwailor'},
-                 {name:'perter',village:'mathura',age:21,eduation:'b.tech',work:'coder',mobile:'7892514360',address:'morar gwailor'},
-                 {name:'perter',village:'mathura',age:21,eduation:'b.tech',work:'coder',mobile:'7892514360',address:'morar gwailor'}
-        ]
+    //  const data=[{name:'perter',village:'mathura',age:21,eduation:'b.tech',work:'coder',mobile:'7892514360',address:'morar gwailor'},
+    //              {name:'perter',village:'mathura',age:21,eduation:'b.tech',work:'coder',mobile:'7892514360',address:'morar gwailor'},
+    //              {name:'perter',village:'mathura',age:21,eduation:'b.tech',work:'coder',mobile:'7892514360',address:'morar gwailor'},
+    //              {name:'perter',village:'mathura',age:21,eduation:'b.tech',work:'coder',mobile:'7892514360',address:'morar gwailor'}
+    //     ]
 
 
          const fetchJobData=async()=>{
-            var result=await getData('')
+           var result = await getData('api/getCarrerEntries')
+          //  console.log(result)
             setJob(result.data)
 
         }
 
         useEffect(()=>{
             fetchJobData();
-        })
+        },[])
 
 
         return(<div>
@@ -39,24 +40,24 @@ export default function ShowJobDetails()
             <th className="text-center">Village</th>
             <th className="text-center">Age</th>
             <th className="text-center">Education</th>
-            <th className="text-center">Work</th>
+                  <th className="text-center">Work Experience</th>
             <th className="text-center">Mobile No.</th>
             <th className="text-center">Address</th>
           </tr>
         </thead>
         <tbody>
           {
-            data.length > 0 ? (
+            job.length > 0 ? (
 
-              data.map((item, i) => {
+              job.map((item, i) => {
                 return (<tr key={i}>
 
                   <td className="text-center">{i + 1}</td>
                   <td className="text-center">{item.name}</td>
                   <td className="text-center">{item.village}</td>
                   <td className="text-center">{item.age}</td>
-                  <td className="text-center">{item.eduation}</td>
-                  <td className="text-center">{item.work}</td>
+                  <td className="text-center">{item.education}</td>
+                  <td className="text-center">{item.workExperience}</td>
                   <td className="text-center">{item.mobile}</td>
                   <td className="text-center">{item.address}</td>
                   

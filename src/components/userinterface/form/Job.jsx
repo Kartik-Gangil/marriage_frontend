@@ -22,12 +22,18 @@ export default function Job()
         formData.append('village',village);
         formData.append('age',age);
         formData.append('education',education);
-        formData.append('work',work);
+        formData.append('workExperience',work);
         formData.append('mobile',mobile);
         formData.append('address',address);
 
-        var result=await postData('',formData);
-          if (result.status) {
+        const formdataObj = {};
+        formData.forEach((value, key) => {
+            formdataObj[key] = value;
+        });
+
+        var result = await postData('api/carrers', formdataObj);
+        console.log(result)
+          if (result.data) {
                 Swal.fire({
                     position: "top-end",
                     icon: "success",
