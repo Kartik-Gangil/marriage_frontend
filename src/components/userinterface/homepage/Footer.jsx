@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 export default function Footer() {
   return (
-    <div style={{backgroundColor: "#8b0000",color: "#fff", paddingTop: "50px"}}>
+    <div style={{ backgroundColor: "#8b0000", color: "#fff", paddingTop: "50px" }}>
       <div className="container">
         <div className="row gy-4">
 
@@ -55,11 +55,11 @@ export default function Footer() {
               </span>
             </div>
 
-        </div>
+          </div>
 
         </div>
 
-        <div className="row">
+        {/* <div className="row">
           <div className="col-lg-6"></div>
           <div className="col-lg-4"></div>
           <div className="col-lg-2">
@@ -71,18 +71,27 @@ export default function Footer() {
               </Link>
                <p style={{ textAlign: 'center', fontWeight: "bolder",fontSize:14 }}>WE BUILD TRUST & Contact Us:+91 6265511439</p>
           </div>
-        </div>
+        </div> */}
 
-        
+
         <hr style={{ borderColor: "rgba(255,255,255,0.2)", marginTop: "40px" }} />
 
-       
-        <p className="text-center pb-3" style={{ fontSize: "14px", opacity: 0.9 }}>
-          © 2024 Vivah & Career Bureau Ambah. All rights reserved.
-        </p>
+        <div className="d-flex align-items-center">
+          <p className="text-left pb-3" style={{ fontSize: "14px", opacity: 0.9 }}>
+            © 2024 Vivah & Career Bureau Ambah. All rights reserved.
+          </p>
+          <p className="ms-auto " style={{ fontSize: "14px", opacity: 0.9 }}>
+            <Link to="https://creovateio.in" style={{ textDecoration: 'none', color: 'inherit' }} >
+              <div className="d-flex align-items-center">
+                Made by CreovateIO
+                <img src="https://creovate-io.vercel.app/android-chrome-512x512.png" height={30} width={30} alt="" />
+              </div>
+            </Link>
+          </p>
+        </div>
       </div>
 
-     
+
 
       {/* Social Circle Styling */}
       <style>{`
@@ -103,6 +112,6 @@ export default function Footer() {
           border-color: #f5c542;
         }
       `}</style>
-    </div>
+    </div >
   );
 }
