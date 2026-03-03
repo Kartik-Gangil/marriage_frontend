@@ -22,7 +22,7 @@ export default function Login() {
     try {
       const data = { email, password };
 
-      const result = await postData('api/login', data)
+      const result = await postData('login', data)
       // console.log(result)
 
       if (result.data?._id !== '') {

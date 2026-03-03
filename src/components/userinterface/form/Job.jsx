@@ -31,7 +31,7 @@ export default function Job()
             formdataObj[key] = value;
         });
 
-        var result = await postData('api/carrers', formdataObj);
+        var result = await postData('carrers', formdataObj);
         console.log(result)
           if (result.data) {
                 Swal.fire({

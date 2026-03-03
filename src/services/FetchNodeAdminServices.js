@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const serverURL = 'http://72.61.226.250:8000'
+const serverURL = '/api'
 
 const currentDate = () => {
       var d = new Date();

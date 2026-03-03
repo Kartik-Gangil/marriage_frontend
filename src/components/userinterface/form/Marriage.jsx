@@ -53,7 +53,7 @@ export default function Marriage() {
       formdataObj[key] = value;
     });
     // console.log(formdataObj)
-    var result = await postData('api/marriage', formdataObj);
+    var result = await postData('marriage', formdataObj);
     // console.log(result)
     if (result.data) {
       Swal.fire({
