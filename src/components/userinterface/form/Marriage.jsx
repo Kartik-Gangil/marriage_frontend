@@ -10,22 +10,23 @@ export default function Marriage() {
   const [jati, setJati] = useState('');
   const [got, setGot] = useState('');
   const [dob, setDOB] = useState('');
-  const [age, setAge] = useState('');
+  const [height, setHeight] = useState('');
   const [education, setEducation] = useState('');
 
-  const [marriageStatus, setMarriageStatus] = useState("अविवाहित");
+  const [marriageStatus, setMarriageStatus] = useState("");
   const [work, setWork] = useState('');
   const [rang, setRang] = useState('');
   const [weight, setWeight] = useState('');
   const [ghar, setGhar] = useState('');
-  const [samag, setSamag] = useState('');
+  const [disabilities , setDisabilities ] = useState('');
   const [salary, setSalary] = useState('');
   const [maPa, setMaPa] = useState('');
 
   const [mobile, setMobile] = useState('');
   const [address, setAddress] = useState('');
+  const [land,setLand]=useState('');
 
-<<<<<<< HEAD
+
     const handleSave=async()=>{
        // alert(1)
         var formData=new FormData();
@@ -35,7 +36,7 @@ export default function Marriage() {
         formData.append('caste',jati);
         formData.append('subCaste',got);
         formData.append('dateOfBirth',dob);
-        formData.append('age',age);
+        formData.append('height',height);
 
         formData.append('education',education);
         formData.append('maritalStatus',marriageStatus);
@@ -44,10 +45,11 @@ export default function Marriage() {
         formData.append('weight',weight);
 
         formData.append('cityOrPlace',ghar);
-        formData.append('societyOrCommunity',samag);
+        formData.append('disabilities ',disabilities);
         formData.append('expectedPartnerAge',salary);
         formData.append('maternalUncleProfession',maPa);
         formData.append('mobileNo',mobile);
+        formData.append('land',land);
         formData.append('address',address);
 
          const formDataObj = {};
@@ -76,56 +78,6 @@ export default function Marriage() {
                     timer: 2000
                 });
             }
-=======
-  const handleSave = async () => {
-    // alert(1)
-    var formData = new FormData();
-
-    formData.append('name', name);
-    formData.append('fatherName', father);
-    formData.append('caste', jati);
-    formData.append('subCaste', got);
-    formData.append('dateOfBirth', dob);
-    formData.append('age', age);
->>>>>>> 35999a8d8e9dc1300dbfa3f49d109f53438e0ba8
-
-    formData.append('education', education);
-    formData.append('maritalStatus', marriageStatus);
-    formData.append('profession', work);
-    formData.append('color', rang);
-    formData.append('weight', weight);
-
-    formData.append('cityOrPlace', ghar);
-    formData.append('societyOrCommunity', samag);
-    formData.append('expectedPartnerAge', salary);
-    formData.append('maternalUncleProfession', maPa);
-    formData.append('mobileNo', mobile);
-    formData.append('address', address);
-    const formdataObj = {};
-    formData.forEach((value, key) => {
-      formdataObj[key] = value;
-    });
-    // console.log(formdataObj)
-    var result = await postData('marriage', formdataObj);
-    // console.log(result)
-    if (result.data) {
-      Swal.fire({
-        position: "top-end",
-        icon: "success",
-        title: "Data Submit Successfully",
-        showConfirmButton: false,
-        timer: 2000
-      });
-    }
-    else {
-      Swal.fire({
-        position: "top-end",
-        icon: "error",
-        title: "Your work has been not saved",
-        showConfirmButton: false,
-        timer: 2000
-      });
-    }
 
 
   }
@@ -186,8 +138,8 @@ export default function Marriage() {
           </div>
 
           <div className="col-md-6 mt-2">
-            <label className="form-label fw-semibold">उम्र</label>
-            <input value={age} onChange={(e) => setAge(e.target.value)} type="text" className="form-control" placeholder="उम्र" />
+            <label className="form-label fw-semibold">लंबाई या कद</label>
+            <input value={height} onChange={(e) => setHeight(e.target.value)} type="text" className="form-control" placeholder="लंबाई या कद" />
           </div>
         </div>
 
@@ -207,87 +159,18 @@ export default function Marriage() {
               value={marriageStatus}
               onChange={(e) => setMarriageStatus(e.target.value)}
             >
+              <option value=''>वैवाहिक स्थिति चुनें</option>
               <option value="अविवाहित">अविवाहित</option>
               <option value="विवाहित">विवाहित</option>
-              <option value="Divorced">Divorced</option>
-              <option value="Widowed">Widowed</option>
+              <option value="तलाक">तलाक</option>
+              <option value="विधवा">विधवा</option>
             </select>
           </div>
 
-<<<<<<< HEAD
-                <div className="row mt-3">
-                    <div className="col-md-6 mt-2">
-                      <label className="form-label fw-semibold">नौकरी / व्यवसाय</label>
-                      <input value={work} onChange={(e)=>setWork(e.target.value)} type="text" className="form-control" placeholder="नौकरी / व्यवसाय"/>
-                    </div>
-
-                    <div className="col-md-6 mt-2">
-                      <label className="form-label fw-semibold">रंग</label>
-                      <input value={rang} onChange={(e)=>setRang(e.target.value)} type="text" className="form-control" placeholder="रंग"/>
-                    </div>
-                </div>
-
-
-                <div className="row mt-3">
-                    <div className="col-md-6 mt-2">
-                      <label className="form-label fw-semibold">वजन</label>
-                      <input value={weight} onChange={(e)=>setWeight(e.target.value)} type="text" className="form-control" placeholder="वजन"/>
-                    </div>
-
-                    <div className="col-md-6 mt-2">
-                      <label className="form-label fw-semibold">शहर में घर / प्लॉट</label>
-                      <input value={ghar} onChange={(e)=>setGhar(e.target.value)} type="text" className="form-control" placeholder="शहर में घर / प्लॉट"/>
-                    </div>
-                </div>
-
-
-                <div className="row mt-3">
-                    <div className="col-md-6 mt-2">
-                      <label className="form-label fw-semibold">समाज / बिरादरी</label>
-                      <input value={samag} onChange={(e)=>setSamag(e.target.value)} type="text" className="form-control" placeholder="समाज / बिरादरी"/>
-                    </div>
-
-                    <div className="col-md-6 mt-2">
-                      <label className="form-label fw-semibold"> लड़का / लड़की की सामान्य आय</label>
-                      <input value={salary} onChange={(e)=>setSalary(e.target.value)} type="text" className="form-control" placeholder=" लड़का / लड़की की सामान्य आय"/>
-                    </div>
-                </div>
-
-
-                <div className="row mt-3">
-                    <div className="col-md-6 mt-2">
-                      <label className="form-label fw-semibold">माता पिता का व्यवसाय</label>
-                      <input value={maPa} onChange={(e)=>setMaPa(e.target.value)} type="text" className="form-control" placeholder="समाता पिता का व्यवसाय"/>
-                    </div>
-
-                    <div className="col-md-6 mt-2">
-                      <label className="form-label fw-semibold">Mobile No</label>
-                      <input value={mobile} onChange={(e)=>setMobile(e.target.value)} type="text" className="form-control" placeholder="Mobile No"/>
-                    </div>
-                </div>
-
-
-                <div className="row mt-4">
-                    <div className="col-md-12">
-                      <label className="form-label fw-semibold">पता</label>
-                      <textarea value={address} onChange={(e)=>setAddress(e.target.value)} type="text" className="form-control" placeholder="पूरा पता लिखें"/>
-                    </div>
-                </div>
-
-
-                <div className="text-center mt-4">
-                   <button onClick={handleSave} className="btn btn-lg px-5" style={{background: "#8B0000",color: "#fff",borderRadius: 50, fontWeight: 600}}>
-                      Submit 
-                   </button>
-                </div>
-
-    
-=======
           <div className="row mt-3">
             <div className="col-md-6 mt-2">
               <label className="form-label fw-semibold">नौकरी / व्यवसाय</label>
               <input value={work} onChange={(e) => setWork(e.target.value)} type="text" className="form-control" placeholder="नौकरी / व्यवसाय" />
->>>>>>> 35999a8d8e9dc1300dbfa3f49d109f53438e0ba8
             </div>
 
             <div className="col-md-6 mt-2">
@@ -312,13 +195,13 @@ export default function Marriage() {
 
           <div className="row mt-3">
             <div className="col-md-6 mt-2">
-              <label className="form-label fw-semibold">समाज / बिरादरी</label>
-              <input value={samag} onChange={(e) => setSamag(e.target.value)} type="text" className="form-control" placeholder="समाज / बिरादरी" />
+              <label className="form-label fw-semibold">सामान्य / विकलांग</label>
+              <input value={disabilities } onChange={(e) => setDisabilities(e.target.value)} type="text" className="form-control" placeholder="सामान्य / विकलांग" />
             </div>
 
             <div className="col-md-6 mt-2">
-              <label className="form-label fw-semibold"> लड़का / लड़की की सामान्य आय</label>
-              <input value={salary} onChange={(e) => setSalary(e.target.value)} type="text" className="form-control" placeholder=" लड़का / लड़की की सामान्य आय" />
+              <label className="form-label fw-semibold"> लड़का / लड़की की सालाना आय</label>
+              <input value={salary} onChange={(e) => setSalary(e.target.value)} type="text" className="form-control" placeholder=" लड़का / लड़की की सालाना आय" />
             </div>
           </div>
 
@@ -338,6 +221,14 @@ export default function Marriage() {
                 className="form-control"
                 placeholder="Mobile No"
               />
+            </div>
+          </div>
+
+
+          <div className="row mt-4">
+            <div className="col-md-12">
+              <label className="form-label fw-semibold">कृषि जमीन</label>
+              <textarea value={land} onChange={(e) => setLand(e.target.value)} type="text" className="form-control" placeholder="कृषि जमीन" />
             </div>
           </div>
 

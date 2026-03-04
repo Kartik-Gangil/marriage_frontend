@@ -14,12 +14,7 @@ export default function ShowJobDetails()
 
 
          const fetchJobData=async()=>{
-<<<<<<< HEAD
             var result=await getData('api/getCarrerEntries')
-=======
-           var result = await getData('getCarrerEntries')
-          //  console.log(result)
->>>>>>> 35999a8d8e9dc1300dbfa3f49d109f53438e0ba8
             setJob(result.data)
 
         }
@@ -41,7 +36,7 @@ export default function ShowJobDetails()
           <tr>
             <th className="text-center">Seq</th>
             <th className="text-center">Name</th>
-            <th className="text-center">Village</th>
+            <th className="text-center">Caste</th>
             <th className="text-center">Age</th>
             <th className="text-center">Education</th>
                   <th className="text-center">Work Experience</th>
@@ -58,7 +53,7 @@ export default function ShowJobDetails()
 
                   <td className="text-center">{i + 1}</td>
                   <td className="text-center">{item.name}</td>
-                  <td className="text-center">{item.village}</td>
+                  <td className="text-center">{item.caste}</td>
                   <td className="text-center">{item.age}</td>
                   <td className="text-center">{item.education}</td>
                   <td className="text-center">{item.workExperience}</td>

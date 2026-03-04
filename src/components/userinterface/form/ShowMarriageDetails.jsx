@@ -8,16 +8,8 @@ export default function ShowJobDetails() {
         const fetchMarriageData=async()=>{
             var result=await getData('api/getMarriageEntries')
             setMarriage(result.data)
+        }
 
-  const fetchMarriageData = async () => {
-    var result = await getData('getMarriageEntries')
-    console.log(result)
-    setMarriage(result.data)
-
-  }
-
-
-  
 
   useEffect(() => {
     fetchMarriageData();
@@ -42,7 +34,7 @@ export default function ShowJobDetails() {
             <th className="text-center">Got</th>
             <th className="text-center">Dob</th>
 
-            <th className="text-center">Age</th>
+            <th className="text-center">Height</th>
             <th className="text-center">Education</th>
             <th className="text-center">Status</th>
             <th className="text-center">Work</th>
@@ -50,10 +42,11 @@ export default function ShowJobDetails() {
             <th className="text-center">Weight</th>
 
             <th className="text-center">Ghar</th>
-            <th className="text-center">Samag</th>
-            <th className="text-center">Ladka / Ladki ka samanya age</th>
+            <th className="text-center">Disabilities</th>
+            <th className="text-center">Ladka / Ladki ka Annul Salary</th>
             <th className="text-center">Maa Papa work</th>
             <th className="text-center">Mobile No.</th>
+            <th className="text-center">Land</th>
             <th className="text-center">Address</th>
           </tr>
         </thead>
@@ -71,18 +64,19 @@ export default function ShowJobDetails() {
                   <td className="text-center">{item.subCaste}</td>
                   <td className="text-center">{new Date(item.dateOfBirth).toLocaleDateString()}</td>
 
-                  <td className="text-center">{item.age}</td>
+                  <td className="text-center">{item.height}</td>
                   <td className="text-center">{item.education}</td>
                   <td className="text-center">{item.maritalStatus}</td>
                   <td className="text-center">{item.profession}</td>
                   <td className="text-center">{item.color}</td>
                   <td className="text-center">{item.weight}</td>
 
-                  <td className="text-center">{item.address}</td>
-                  <td className="text-center">{item.societyOrCommunity}</td>
+                  <td className="text-center">{item.ghar}</td>
+                  <td className="text-center">{item.disabilities }</td>
                   <td className="text-center">{item.expectedPartnerAge}</td>
                   <td className="text-center">{item.maternalUncleProfession}</td>
                   <td className="text-center">{item.mobileNo}</td>
+                  <td className="text-center">{item.land}</td>
                   <td className="text-center">{item.address}</td>
 
                 </tr>
@@ -92,7 +86,7 @@ export default function ShowJobDetails() {
             )
               : (
                 <tr>
-                  <td colSpan="17" className="text-center">
+                  <td colSpan="18" className="text-center">
                     No Data Available
                   </td>
                 </tr>

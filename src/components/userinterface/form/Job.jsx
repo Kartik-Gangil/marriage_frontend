@@ -7,7 +7,7 @@ import Footer from "../homepage/Footer";
 export default function Job()
 {
     const [name,setName]=useState('');
-    const [village,setVillage]=useState('');
+    const [caste,setCaste]=useState('');
     const [age,setAge]=useState('');
     const [education,setEducation]=useState('');
     const [work,setWork]=useState('');
@@ -19,14 +19,13 @@ export default function Job()
         var formData=new FormData();
 
         formData.append('name',name);
-        formData.append('village',village);
+        formData.append('caste',caste);
         formData.append('age',age);
         formData.append('education',education);
         formData.append('workExperience',work);
         formData.append('mobile',mobile);
         formData.append('address',address);
 
-<<<<<<< HEAD
          const formDataObj = {};
 
         formData.forEach((value, key) => {
@@ -35,16 +34,6 @@ export default function Job()
 
         var result=await postData('api/carrers',formDataObj);
           if (result.status) {
-=======
-        const formdataObj = {};
-        formData.forEach((value, key) => {
-            formdataObj[key] = value;
-        });
-
-        var result = await postData('carrers', formdataObj);
-        console.log(result)
-          if (result.data) {
->>>>>>> 35999a8d8e9dc1300dbfa3f49d109f53438e0ba8
                 Swal.fire({
                     position: "top-end",
                     icon: "success",
@@ -96,8 +85,8 @@ export default function Job()
                     </div>
 
                     <div className="col-md-6 mt-2">
-                      <label className="form-label fw-semibold">गाँव</label>
-                      <input value={village} onChange={(e)=>setVillage(e.target.value)} type="text" className="form-control"  placeholder="गाँव का नाम"/>
+                      <label className="form-label fw-semibold">जाति</label>
+                      <input value={caste} onChange={(e)=>setCaste(e.target.value)} type="text" className="form-control"  placeholder="जाति का नाम"/>
                     </div>
                 </div>
 

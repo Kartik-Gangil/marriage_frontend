@@ -16,15 +16,15 @@ export default function Body()
           <div className="col-md-6">
 
             <h1  className="fw-bold display-6 display-md-4" style={{fontFamily: "Georgia, serif",fontWeight:700,color: "#8B0000",lineHeight: "1.3"}}>
-              Where Tradition <br /> Meets Destiny
+              Where Tradition & Job <br /> Meets Destiny
             </h1>
 
             <p style={{ color: "#6c757d", fontSize: "16px",marginTop: "20px",lineHeight: "1.8"}}>
-              Welcome to Amba’s most trusted Marriage and Career Bureau.
+              Welcome to most trusted Marriage and Career Bureau.
               We specialize in bringing hearts together and building
               professional futures. For over a decade, we have been
               the bridge to happy homes and successful careers in
-              the Morena region.
+              the region.
             </p>
 
             <div className="d-flex flex-column flex-md-row gap-3 mt-4">
@@ -32,10 +32,10 @@ export default function Body()
                 ✔ 100% Verified Profiles
               </span>
 
-              <span className="badge rounded-pill px-4 py-2" style={{border: "1px solid #d4af37", color: "#8B0000", background: "#fff"}}>
+            {/*  <span className="badge rounded-pill px-4 py-2" style={{border: "1px solid #d4af37", color: "#8B0000", background: "#fff"}}>
                 📍 Based in Morena (M.P)
-              </span>
-            </div>
+              </span>  */}
+            </div>  
 
           </div>
 
@@ -114,7 +114,7 @@ export default function Body()
 
               <p className="text-muted px-3">
                 Explore local career opportunities and placement
-                services in Morena.
+                services in India.
               </p>
 
               <button onClick={()=>navigate('/job')} className="btn mt-3" style={{backgroundColor: "#8B0000",color: "white", borderRadius: "30px", padding: "10px 25px"}}>
@@ -136,7 +136,7 @@ export default function Body()
         <div className="shadow" style={{ backgroundColor: "#ffffff",borderRadius: "25px",padding: "50px", width: "85%", maxWidth: "1000px"}}>
          
           <h2 className="text-center fw-bold" style={{fontFamily: "Georgia, serif", color: "#2d2d2d"}}>
-            Registration Fees
+            Registration Fees For Marriage only
           </h2>
 
          
