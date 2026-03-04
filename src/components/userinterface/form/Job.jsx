@@ -26,6 +26,7 @@ export default function Job()
         formData.append('mobile',mobile);
         formData.append('address',address);
 
+<<<<<<< HEAD
          const formDataObj = {};
 
         formData.forEach((value, key) => {
@@ -34,6 +35,16 @@ export default function Job()
 
         var result=await postData('api/carrers',formDataObj);
           if (result.status) {
+=======
+        const formdataObj = {};
+        formData.forEach((value, key) => {
+            formdataObj[key] = value;
+        });
+
+        var result = await postData('carrers', formdataObj);
+        console.log(result)
+          if (result.data) {
+>>>>>>> 35999a8d8e9dc1300dbfa3f49d109f53438e0ba8
                 Swal.fire({
                     position: "top-end",
                     icon: "success",
