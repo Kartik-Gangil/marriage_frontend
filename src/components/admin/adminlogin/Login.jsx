@@ -17,7 +17,7 @@ export default function Login()
     try {
       const data = {email, password};
 
-      const result = await postData('', data)
+      const result = await postData('api/login', data)
       // console.log(result)
 
       if (result.id !== '') {

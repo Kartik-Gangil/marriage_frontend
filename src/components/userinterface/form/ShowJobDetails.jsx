@@ -14,7 +14,7 @@ export default function ShowJobDetails()
 
 
          const fetchJobData=async()=>{
-            var result=await getData('')
+            var result=await getData('api/getCarrerEntries')
             setJob(result.data)
 
         }

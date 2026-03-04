@@ -14,7 +14,7 @@ export default function ShowJobDetails()
         ]
 
         const fetchMarriageData=async()=>{
-            var result=await getData('')
+            var result=await getData('api/getMarriageEntries')
             setMarriage(result.data)
 
         }

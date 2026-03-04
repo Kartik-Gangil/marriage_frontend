@@ -31,26 +31,33 @@ export default function Marriage()
         var formData=new FormData();
         
         formData.append('name',name);
-        formData.append('father',father);
-        formData.append('jati',jati);
-        formData.append('got',got);
-        formData.append('dob',dob);
+        formData.append('fatherName',father);
+        formData.append('caste',jati);
+        formData.append('subCaste',got);
+        formData.append('dateOfBirth',dob);
         formData.append('age',age);
 
         formData.append('education',education);
-        formData.append('marriageStatus',marriageStatus);
-        formData.append('work',work);
-        formData.append('rang',rang);
+        formData.append('maritalStatus',marriageStatus);
+        formData.append('profession',work);
+        formData.append('color',rang);
         formData.append('weight',weight);
 
-        formData.append('ghar',ghar);
-        formData.append('samag',samag);
-        formData.append('salary',salary);
-        formData.append('maPa',maPa);
-        formData.append('mobile',mobile);
+        formData.append('cityOrPlace',ghar);
+        formData.append('societyOrCommunity',samag);
+        formData.append('expectedPartnerAge',salary);
+        formData.append('maternalUncleProfession',maPa);
+        formData.append('mobileNo',mobile);
         formData.append('address',address);
 
-        var result=await postData('',formData);
+         const formDataObj = {};
+
+        formData.forEach((value, key) => {
+            formDataObj[key] = value;
+        });
+
+        var result=await postData('api/marriage',formDataObj);
+        alert(1)
           if (result.status) {
                 Swal.fire({
                     position: "top-end",
@@ -203,7 +210,7 @@ export default function Marriage()
 
                     <div className="col-md-6 mt-2">
                       <label className="form-label fw-semibold">Mobile No</label>
-                      <input value={name} onChange={(e)=>setName(e.target.value)} type="text" className="form-control" placeholder="Mobile No"/>
+                      <input value={mobile} onChange={(e)=>setMobile(e.target.value)} type="text" className="form-control" placeholder="Mobile No"/>
                     </div>
                 </div>
 
