@@ -77,17 +77,17 @@ export default function Footer() {
         <hr style={{ borderColor: "rgba(255,255,255,0.2)", marginTop: "40px" }} />
 
         <div className="d-flex align-items-center">
-          <p className="text-left pb-3" style={{ fontSize: "14px", opacity: 0.9 }}>
+          <h5 className="text-left pb-3" style={{ fontSize: "14px", opacity: 0.9 }}>
             © 2024 Vivah & Career Bureau Ambah. All rights reserved.
-          </p>
-          <p className="ms-auto " style={{ fontSize: "14px", opacity: 0.9 }}>
+          </h5>
+          <div className="ms-auto " style={{ fontSize: "14px", opacity: 0.9 }}>
             <Link to="https://creovateio.in" style={{ textDecoration: 'none', color: 'inherit' }} >
               <div className="d-flex align-items-center">
                 Made by CreovateIO
                 <img src="https://creovate-io.vercel.app/android-chrome-512x512.png" height={30} width={30} alt="" />
               </div>
             </Link>
-          </p>
+          </div>
         </div>
       </div>
 

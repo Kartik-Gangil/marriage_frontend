@@ -159,7 +159,7 @@ export default function Marriage() {
               value={marriageStatus}
               onChange={(e) => setMarriageStatus(e.target.value)}
             >
-              <option value=''>वैवाहिक स्थिति चुनें</option>
+              <option  value=''>वैवाहिक स्थिति चुनें</option>
               <option value="अविवाहित">अविवाहित</option>
               <option value="विवाहित">विवाहित</option>
               <option value="तलाक">तलाक</option>
@@ -196,7 +196,17 @@ export default function Marriage() {
           <div className="row mt-3">
             <div className="col-md-6 mt-2">
               <label className="form-label fw-semibold">सामान्य / विकलांग</label>
-              <input value={disabilities } onChange={(e) => setDisabilities(e.target.value)} type="text" className="form-control" placeholder="सामान्य / विकलांग" />
+              {/* <input value={disabilities } onChange={(e) => setDisabilities(e.target.value)} type="text" className="form-control" placeholder="सामान्य / विकलांग" /> */}
+            
+              <select
+                className="form-control"
+                value={disabilities}
+                onChange={(e) => setDisabilities(e.target.value)}
+              >
+                <option value=''>चुनें</option>
+                <option value="सामान्य">सामान्य</option>
+                <option value="विकलांग">विकलांग</option>
+              </select>
             </div>
 
             <div className="col-md-6 mt-2">
