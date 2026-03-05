@@ -2,35 +2,33 @@ import { useEffect, useState } from "react";
 import Header from "../homepage/Header";
 import { getData } from "../../../services/FetchNodeAdminServices";
 
-export default function ShowJobDetails()
-{
-    const [job,setJob]=useState([]);
+export default function ShowJobDetails() {
+  const [job, setJob] = useState([]);
 
-    //  const data=[{name:'perter',village:'mathura',age:21,eduation:'b.tech',work:'coder',mobile:'7892514360',address:'morar gwailor'},
-    //              {name:'perter',village:'mathura',age:21,eduation:'b.tech',work:'coder',mobile:'7892514360',address:'morar gwailor'},
-    //              {name:'perter',village:'mathura',age:21,eduation:'b.tech',work:'coder',mobile:'7892514360',address:'morar gwailor'},
-    //              {name:'perter',village:'mathura',age:21,eduation:'b.tech',work:'coder',mobile:'7892514360',address:'morar gwailor'}
-    //     ]
-
-
-         const fetchJobData=async()=>{
-            var result=await getData('api/getCarrerEntries')
-            setJob(result.data)
-
-        }
-
-        useEffect(()=>{
-            fetchJobData();
-        },[])
+  //  const data=[{name:'perter',village:'mathura',age:21,eduation:'b.tech',work:'coder',mobile:'7892514360',address:'morar gwailor'},
+  //              {name:'perter',village:'mathura',age:21,eduation:'b.tech',work:'coder',mobile:'7892514360',address:'morar gwailor'},
+  //              {name:'perter',village:'mathura',age:21,eduation:'b.tech',work:'coder',mobile:'7892514360',address:'morar gwailor'},
+  //              {name:'perter',village:'mathura',age:21,eduation:'b.tech',work:'coder',mobile:'7892514360',address:'morar gwailor'}
+  //     ]
 
 
-        return(<div>
-    
-             <div style={{ background: '#e9d5a3', color: 'black', width: '100%', height: 80, display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', marginBottom: 40, textAlign: 'center' }}>
-                <div style={{ fontSize: '1.1rem', fontWeight: 600, letterSpacing: 1.2,fontFamily:'Newsreader' }}>SHOW ALL JOB APPLICATION</div>
-            </div>
+  const fetchJobData = async () => {
+    var result = await getData('api/getCarrerEntries')
+    setJob(result.data)
+  }
+  
+  useEffect(() => {
+    fetchJobData();
+  }, [])
 
-            <div className="table-responsive">
+
+  return (<div>
+
+    <div style={{ background: '#e9d5a3', color: 'black', width: '100%', height: 80, display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', marginBottom: 40, textAlign: 'center' }}>
+      <div style={{ fontSize: '1.1rem', fontWeight: 600, letterSpacing: 1.2, fontFamily: 'Newsreader' }}>SHOW ALL JOB APPLICATION</div>
+    </div>
+
+    <div className="table-responsive">
       <table className="table table-bordered table-sm">
         <thead className="table-secondary">
           <tr>
@@ -39,12 +37,13 @@ export default function ShowJobDetails()
             <th className="text-center">Caste</th>
             <th className="text-center">Age</th>
             <th className="text-center">Education</th>
-                  <th className="text-center">Work Experience</th>
+            <th className="text-center">Work Experience</th>
             <th className="text-center">Mobile No.</th>
             <th className="text-center">Address</th>
           </tr>
         </thead>
         <tbody>
+          
           {
             job.length > 0 ? (
 
@@ -53,13 +52,13 @@ export default function ShowJobDetails()
 
                   <td className="text-center">{i + 1}</td>
                   <td className="text-center">{item.name}</td>
-                  <td className="text-center">{item.caste}</td>
+                  <td className="text-center">{item.village}</td>
                   <td className="text-center">{item.age}</td>
                   <td className="text-center">{item.education}</td>
                   <td className="text-center">{item.workExperience}</td>
                   <td className="text-center">{item.mobile}</td>
                   <td className="text-center">{item.address}</td>
-                  
+
                 </tr>
                 )
               }
@@ -76,8 +75,8 @@ export default function ShowJobDetails()
         </tbody>
       </table>
     </div>
-    
-    
-        </div>)
-    
+
+
+  </div>)
+
 }
