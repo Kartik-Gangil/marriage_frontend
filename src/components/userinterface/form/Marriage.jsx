@@ -159,7 +159,7 @@ export default function Marriage() {
               value={marriageStatus}
               onChange={(e) => setMarriageStatus(e.target.value)}
             >
-              <option value=''>वैवाहिक स्थिति चुनें</option>
+              <option  value=''>वैवाहिक स्थिति चुनें</option>
               <option value="अविवाहित">अविवाहित</option>
               <option value="विवाहित">विवाहित</option>
               <option value="तलाक">तलाक</option>
