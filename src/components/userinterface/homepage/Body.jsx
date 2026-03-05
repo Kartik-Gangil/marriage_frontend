@@ -136,14 +136,14 @@ export default function Body()
         <div className="shadow" style={{ backgroundColor: "#ffffff",borderRadius: "25px",padding: "50px", width: "85%", maxWidth: "1000px"}}>
          
           <h2 className="text-center fw-bold" style={{fontFamily: "Georgia, serif", color: "#2d2d2d"}}>
-            Registration Fees For Marriage only
+            Registration Fees For Marriage Only
           </h2>
 
          
-          <p className="text-center mt-3" style={{color: "#a10000",fontWeight: 600}}>
+         {/* <p className="text-center mt-3" style={{color: "#a10000",fontWeight: 600}}>
             <i className="bi bi-cash me-2"></i>
             रजिस्ट्रेशन फीस [Mobile No] पर भेजें
-          </p>
+          </p>  */}
 
           <div className="row align-items-center mt-4">
 
