@@ -2,6 +2,8 @@ import React from "react";
 import couple from "../../../assets/couple.png";
 import { useNavigate } from "react-router-dom";
 
+import bal from "../../../assets/bal.jpeg";
+
 export default function Body() 
 {
   const navigate=useNavigate();
@@ -145,13 +147,15 @@ export default function Body()
             रजिस्ट्रेशन फीस [Mobile No] पर भेजें
           </p>  */}
 
-          <div className="row align-items-center mt-4">
+          <div className="row align-items-center mt-3">
 
             <div className="col-md-6 text-center text-md-start">
               <p className="text-muted" style={{fontSize: "15px",lineHeight: "1.7"}}>
                 We accept all major UPI applications for your convenience.
-                Please share the transaction receipt on WhatsApp.
+                Please share the transaction receipt on WhatsApp Number <b>9752292743.</b>
               </p>
+
+              
 
               <div className="mt-4">
                 <i className="bi bi-google fs-4 text-secondary me-3"></i>
@@ -161,14 +165,14 @@ export default function Body()
             </div>
 
           
-            <div className="col-md-6 mt-4 mt-md-0 d-flex justify-content-center">
+            <div className="col-12 col-md-6 mt-4 mt-md-0 d-flex justify-content-center">
               <div className="text-center" style={{border: "2px dashed #d4b06a",borderRadius: "20px",padding: "20px", width: "100%"}}>
-                <p className="text-uppercase text-muted"style={{fontSize: "12px",letterSpacing: "px"}}>
-                  UPI NUMBER
+                <p className="text-uppercase text-muted"style={{fontSize: "12px"}}>
+                  Scan And Pay
                 </p>
 
-                <h4 style={{color: "#a10000",fontWeight: 600,margin: "8px 0",}}>
-                  +91 9752292743
+                <h4 style={{color: "#a10000",fontWeight: 600,margin: "8px 0"}}>
+                  <img alt="QR Code" src={bal} s style={{ maxWidth: "150px", width: "100%" }}/>
                 </h4>
 
                 <small className="text-muted">
