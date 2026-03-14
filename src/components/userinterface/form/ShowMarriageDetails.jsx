@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import Header from "../homepage/Header";
 import { getData } from "../../../services/FetchNodeAdminServices";
 
 export default function ShowJobDetails() {
@@ -71,7 +70,7 @@ export default function ShowJobDetails() {
                   <td className="text-center">{item.color}</td>
                   <td className="text-center">{item.weight}</td>
 
-                  <td className="text-center">{item.ghar}</td>
+                  <td className="text-center">{item.cityOrPlace}</td>
                   <td className="text-center">{item.disabilities }</td>
                   <td className="text-center">{item.expectedPartnerAge}</td>
                   <td className="text-center">{item.maternalUncleProfession}</td>
